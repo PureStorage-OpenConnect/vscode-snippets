@@ -1,0 +1,15 @@
+{
+	// 
+	// Pure Storage Visual Studio Code Snippets for PowerShell SDK
+	// Version: 0.1
+	// 
+	//
+	"Connect to FlashArray//M20": {
+		"prefix": "pfaconnect",
+		"body": [
+			"# Connect to the Pure Storage FlashArray",
+			"$FlashArray = New-PfaArray -EndPoint $0 -Credentials (Get-Credential) -IgnoreCertificateError",
+		],
+		"description": "Connect to a FlashArray using Pure Storage PowerShell SDK"
+	}
+}
