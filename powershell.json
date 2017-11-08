@@ -2,14 +2,23 @@
 	// 
 	// Pure Storage Visual Studio Code Snippets for PowerShell SDK
 	// Version: 0.1
-	// 
+	// Visual Studio snippets that help create common function or cmdlet tasks when using the PowerShell SDK. 
 	//
-	"Connect to FlashArray//M20": {
+	"Connect to FlashArray": {
 		"prefix": "pfaconnect",
 		"body": [
-			"# Connect to the Pure Storage FlashArray",
-			"$FlashArray = New-PfaArray -EndPoint $0 -Credentials (Get-Credential) -IgnoreCertificateError",
+			"# Connect to the Pure Storage FlashArray.",
+			"${1:FlashArray:$FlashArray} = New-PfaArray -EndPoint ${2:EndPoint} -Credentials (Get-Credential) -IgnoreCertificateError $0"
 		],
 		"description": "Connect to a FlashArray using Pure Storage PowerShell SDK"
+	}
+,
+	"Create New FlashArray Volume Snapshot": {
+		"prefix": "pfavolsnap",
+		"body": [
+			"# Create new volume snapshot.",
+			"New-PfaVolumeSnapshots -Array $1 -Source $2"
+		],
+		"description": "Create new FlashArray volume snapshot using Pure Storage PowerShell SDK"
 	}
 }
