@@ -13,3 +13,8 @@ FlashArray = New-PfaArray -EndPoint  -Credentials (Get-Credential) -IgnoreCertif
 Note: Still working to figure out why the "FlashArray" at the beginning is not picking up the $ (I know its syntax related) and also tabbing past the "EndPoint" tab mark ($2). 
 
 * pfavolsnap -- Creates completed cmdlet with tab marks for creating a Pure Storage FlashArray volume snasphot based on a source volume. 
+
+```powershell
+# Create new volume snapshot.
+New-PfaVolumeSnapshots -Array $1 -Source $2
+```
