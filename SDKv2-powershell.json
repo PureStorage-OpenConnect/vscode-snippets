@@ -1,0 +1,50 @@
+{
+	"Connect to FlashArray": {
+		"prefix": "pfa2connect",
+		"body": "${1:FlashArray:$FlashArray} = Connect-Pfa2Array -EndPoint ${2:EndPoint} -Credentials (Get-Credential) -IgnoreCertificateError $0",
+		"description": "Connect to a FlashArray using the Pure Storage PowerShell SDK v2.x"
+	},
+	"Run a FlashArray CLI Command": {
+		"prefix": "pfa2cli",
+		"body": "Invoke-Pfa2CLICommand -EndPoint ${1:EndPoint} -Username ${2:FlashArrayUsername} -Password ${3:FlashArrayPassword} -CommandText ${0:CommandText",
+		"description": "Enables the execution of a CLI command on a FlashArray via an SSH connection"
+	},
+	"Create a FlashArray Protection Group": {
+		"prefix": "pfa2pgroup",
+		"body": "New-Pfa2ProtectionGroup -Array $(1:FlashArray} -Name ${2:PGroupName}",
+		"description": "Creates a Protection Group on a FlashArray"
+	},
+	"Create a new FlashArray volume": {
+		"prefix": "pfa2volume",
+		"body": "New-Pfa2Volume -Name ${1:VolumeName} -Provisioned ${2:SizeInBytes}",
+		"description": "Creates a new volume with specified size (in bytes) on a FlashArray"
+	},
+	"Create a snapshot of a Protection Group": {
+		"prefix": "pfa2pgroupsnapshot",
+		"body": "New-Pfa2ProtectionGroupSnapshot -Array ${1:FlashArray} -SourceNames ${2:SourcePGroup} -Suffix ${3:SnapshotSuffix}",
+		"description": "Creates a new snapshot of a FlashArray Protection Group"
+	},
+	"Creates a new Protection Group Volume": {
+		"prefix": "pfa2pgroupvolume",
+		"body": "New-Pfa2ProtectionGroupVolume -GroupNames ${1:PGroupNames} -MemberNames ${2:PgroupMembers}",
+		"description": "Creates a new volume in a FlashArray Protection Group. Multiple MemberNames must be comma seperated."
+	},
+	"Create FlashArray volume snapshot": {
+		"prefix": "pfa2volumesnapshot",
+		"body": "New-Pfa2VolumeSnapshot -Array {1:FlashArray} -SourceNames ${2:SourceVolumes} -Suffix ${3:SnapshotSuffix}",
+		"description": "Creates a snapshot of a FlashArray volume. Multiple SourceNames must be comma seperated."
+	}
+	// Place your snippets for powershell here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+}
