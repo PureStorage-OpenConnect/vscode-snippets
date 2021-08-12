@@ -1,0 +1,8 @@
+{
+    "id": "VSCode-Snippets",
+    "name": "Visual Studio Code Snippets for PowerShell SDKs",
+    "filter": "devops microsoft",
+    "image": "http://code.purestorage.com/images/vscode.png",
+    "featured": 0,
+    "priority": 1
+}
