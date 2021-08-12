@@ -7,6 +7,7 @@ Use the SDKv2-powershell.json file for snippets that are exclusive to the Pure S
 Use the SDKv1-powershell.json file for snippets that are exclusive to the Pure Storage PowerShell SDK version 1.x.
 
 [SDKv1 screenshot:](/docs/vscode-snippets_example1.png)
+
 [SDKv2 screenshot:](/docs/sdkv2_example.gif)
 
 *We encourage Pull requests for this repository to further enhance the code and give back to the community.*
