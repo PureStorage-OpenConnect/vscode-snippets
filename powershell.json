@@ -1,24 +1,37 @@
 {
-	// 
-	// Pure Storage Visual Studio Code Snippets for PowerShell SDK
-	// Version: 0.1
-	// Visual Studio snippets that help create common function or cmdlet tasks when using the PowerShell SDK. 
-	//
 	"Connect to FlashArray": {
 		"prefix": "pfaconnect",
 		"body": [
+			"# Import Module",
+			"Import-Module -Name PureStoragePowerShellSDK",
+			"",
 			"# Connect to the Pure Storage FlashArray.",
 			"${1:FlashArray:$FlashArray} = New-PfaArray -EndPoint ${2:EndPoint} -Credentials (Get-Credential) -IgnoreCertificateError $0"
 		],
 		"description": "Connect to a FlashArray using Pure Storage PowerShell SDK"
-	}
-,
+	},
 	"Create New FlashArray Volume Snapshot": {
 		"prefix": "pfavolsnap",
 		"body": [
 			"# Create new volume snapshot.",
-			"New-PfaVolumeSnapshots -Array $1 -Source $2"
+			"New-PfaVolumeSnapshots -Array ${1:FlashArray Object} -Source ${2:Name of Volume}"
 		],
 		"description": "Create new FlashArray volume snapshot using Pure Storage PowerShell SDK"
+	},
+	"Create New FlashArray Volume, Connect to Host, Create Snapshot, New FlashArray Volume Snapshot": {
+		"prefix": "pfaconfighost",
+		"body": [
+			"# Create Host",
+			"New-PfaHost -Array ${1:FlashArray Object} -Name ${2:Host Name} -WwnList ${3:World Wide Name}",
+			"# Create Volume",
+			"New-PfaVolume -Array ${1:FlashArray Object} -VolumeName ${4:Volume Name} -Size ${5:Size of Volume} -Unit ${6:T,M,B,P}",
+			"# Connect Volume to Host",
+			"New-PfaHostVolumeConnection -Array ${1:FlashArray Object} -HostName ${2:Host Name} -VolumeName ${4:Volume Name}",
+			"# Create new volume snapshot.",
+			"New-PfaVolumeSnapshots -Array ${1:FlashArray Object} -Source ${4:Name of Volume} -Suffix ${7:Suffix}",
+			"# Get Volume Snapshot Details",
+			"Get-PfaVolumeSnapshot -Array ${1:FlashArray Object} -SnapshotName * | Select Name"
+		],
+		"description": "Configure new Host using Pure Storage PowerShell SDK"
 	}
 }
