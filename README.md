@@ -4,15 +4,7 @@ Code snippets for Visual Studio Code that include support for the Pure Storage P
 
 To use these snippets, add them to your existing powershell.json file or create a new Global Snippet file. [Instructions on how to create and manage snippets is located here](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
 
-<<<<<<< Updated upstream
-Use the SDKv1-powershell.json file for snippets that are exclusive to the Pure Storage PowerShell SDK version 1.x.
-
-[SDKv1 screenshot:](/docs/vscode-snippets_example1.png)
-
-[SDKv2 screenshot:](/docs/sdkv2_example.gif)
-=======
 ![Snippet example](/docs/vscode-snippets_example1.png)
->>>>>>> Stashed changes
 
 *We encourage Pull requests for this repository to further enhance the code and give back to the community.*
 Reach out to fa-solutions@purestorage.com if you have any questions.
